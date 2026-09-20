@@ -2,8 +2,9 @@
  * Domain model for a student's event registration ("ticket").
  *
  * This mirrors the shape the registration service is expected to return once
- * the backend lands (PRD Epic 5: REG-04). Until then it is populated purely
- * from client-side fixtures in `mock-tickets.ts` — no backend, no gRPC.
+ * the backend lands (PRD Epic 5: REG-04). No sample data is shipped with the
+ * application — the route renders its empty state until the BFF supplies real
+ * registrations, and Storybook supplies its own sample tickets.
  */
 
 /** Lifecycle state of a single registration. */

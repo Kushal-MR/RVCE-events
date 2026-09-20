@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { QrPass } from "./qr-pass";
-import { confirmedTicket, waitlistedTicket } from "./mock-tickets";
+
+/** Sample pass codes for Storybook only — the component takes a plain string. */
+const SAMPLE_CODE = "RVCE-EVT-98213";
+const OTHER_SAMPLE_CODE = "RVCE-EVT-98274";
 
 const meta: Meta<typeof QrPass> = {
   title: "Tickets/QrPass",
@@ -24,12 +27,12 @@ export default meta;
 type Story = StoryObj<typeof QrPass>;
 
 export const Default: Story = {
-  args: { ticketCode: confirmedTicket.ticketCode },
+  args: { ticketCode: SAMPLE_CODE },
 };
 
 /** On the cobalt canvas, to confirm the blush pass panel holds its contrast. */
 export const OnCobalt: Story = {
-  args: { ticketCode: waitlistedTicket.ticketCode },
+  args: { ticketCode: OTHER_SAMPLE_CODE },
   decorators: [
     (Story) => (
       <div className="flex min-h-[260px] items-center justify-center bg-[var(--bg-cobalt)] p-8">
